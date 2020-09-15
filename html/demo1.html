@@ -1,0 +1,59 @@
+<!DOCTYPE html> <!-- Kommentti, tag määrittää html-version HTML5:ksi-->
+<html>
+    <head>
+        <title>Demo 1</title>
+        <meta charset ="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./../css/demo1.css">
+        <style>
+            #myHeader {
+              background-color: lightgray;
+              color: black;
+              padding: 40px;
+              text-align: center;
+            }
+            </style>
+    </head>
+    <body>
+            <h1 id="myHeader">My Header</h1>
+
+        <h1>Isoin otsikko</h1>
+        <h2>Toiseksi isoin otsikko</h2>
+        <h6>Pienin otsikko</h6>
+
+        <p>Tämä on tekstikappale, tag on p, tulee sanasta paragraph.</p>
+        <p>Toinen kappale jättää selvän välin edelliseen, <br>
+        rivinvaihdon voi tehdä tagilla br, tulee sanasta break</p>
+        <h2>Listat</h2>
+        <h3>Tavallinen lista</h3>
+        <p>Tavallisen listan alkutag on ul</p>
+        <ul>
+            <li>ensimäinen elementti, tag on li</li>
+            <li>toinen elementti</li>
+        </ul>
+
+        <h3>Numeroitu lista</h3>
+        <p>Numeroidun listan tag on ol</p>
+        <ol>
+            <li>eka elementti</li>
+            <li>toka elementti</li>
+        </ol>
+
+        <h2>Linkkejä</h2>
+        <h3>Ulkoiset sivut</h3>
+        <p id="tarkein">Käytä koko URL:ää</p>
+        <p>Linkki alkaa tagilla a (anchor), href (reference) kertoo, mihin linkki vie. Tagien väliin tulee se teksti, minkä lukija näkee. Jos haluat avata sivu toiselle välilehdelle, lisää target-attribuutti ja anna sen arvoksi _blank</p>
+        <ul>
+            <li><a href="http://www.leeniemi.net" target ="_blank">Leenan sivustolle</a></li>
+        </ul>
+
+        <h3>Linkki omille sivuille</h3>
+        <p>Linkit suhteellisina viittauksina.</p>
+        <p>Jos sivu on samassa kansiossa, voit viitata siihen suoraan sen nimellä, esim. a href ="sivu2.html"</p>
+        <p>Jos sivu on alikansiossa, viitataan polulla alikansioon, esim. a href ="./alikansio/sivu2.html"</p>
+        <p>Jos sivu on rinnakkaisessa kansiossa, polkuun tulee alkuun viittaus ylöspäin, esim. a href ="../sivukansio/sivu3.html"</p>
+
+        <h3>Kuvat</h3>
+        <p class = "kuvateksti">Kuva lisätään tagilla img. Pakollinen attribuutti on alt (alternative), johon kirjoitetaan vaihtoehto, jos kuva ei toimi. Toinen pakollinen on src (source), jossa kerrotaan mistä kuva löytyy.</p>
+        <p><img src="./kuvat/otus.jpg" alt ="otus"></p>
+    </body>
+</html>
