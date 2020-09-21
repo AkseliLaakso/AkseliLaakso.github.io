@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <title>
+            DOM demot 1
+        </title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../../johdatus-ohjelmointiin-AkseliLaakso/js/dom_demo1.js"></script>
+    </head>
+    <body>
+        <h2> Kohta A</h2>
+        <p>Valitsee elementin ja vaihtaa sen sisällön</p>
+
+        <span id="tahti">
+            Tee toivomus
+            <img src="../kuvat/star_off.gif">
+         </span>
+         <button type="button" onclick="toivo()">Toivo!</button>
+
+<h2>Kohta B</h2>
+<p>Vaihda elementin attribuutin arvoa (attribuutin on src ja arvo kuva).</p>
+<button onclick="document.getElementById('kuvani').src ='../kuvat/star_on.gif'">Kirkasta tähteä!</button>
+
+<img src="../kuvat/star_off.gif" alt="tahti" id="kuvani">
+
+<button onclick="document.getElementById('kuvani').src='../kuvat/star_off.gif'"> Haalista tähteä!</button>
+
+<h2>Kohta C</h2>
+<p>Vaihda kaikkien kappaleiden (p) taustaväri</p>
+
+<button onclick="set_background()">Vaihda p taustaväri</button>
+
+<h2>Kohta D</h2>
+
+<p>Vaihda kappaleiden id="teksti" ulkoasu: teksti 14 pisteettä. vihreä; Comic Sans MS.</p>
+
+<p id ="teksti">Tämä teksti: javascript harjoituksia muutetaan</p>
+<div>
+    <button onclick='js_style()'>Tyylin vaihto</button>
+</div>
+
+<h2>Kohta E</h2>
+<p id="piiloon"> Piilota elementti</p>
+
+<button onclick="document.getElementById('piiloon').style.display='none'">piilota teksti!</button>
+
+<h2>Kohta F</h2>
+<p>Näytä piilotetut elementit</p>
+
+<button onclick="document.getElementById('piiloon').style.display='block'">Näytä piilotettu elementti</button>
+
+
+    </body>
+
+</html>
