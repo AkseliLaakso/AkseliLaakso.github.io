@@ -1,0 +1,23 @@
+html,
+body {
+    height:100%;
+    margin:0;
+}
+section {
+    height:100vh;
+}
+#kalatori {
+    background:lightblue;
+}
+#markkinat {
+    background:lightgreen;
+}
+#hinnasto {
+    background:lightsalmon;
+}
+#yhteys {
+    background:lightgoldenrodyellow;
+}
+#sijainti {
+    background:lightslategrey;
+}
