@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dom demo 2</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Kohta 1, child_node</h1>
+
+        <span id="stars">
+            <img src="../kuvat/star_off.gif">
+            <img src="../kuvat/star_off.gif">
+            <img src="../kuvat/star_off.gif">
+        </span>
+
+        <script>
+        document.getElementById("stars").childNodes[3].src = "../kuvat/star_on.gif";
+        document.getElementById("stars").childNodes[5].src = "../kuvat/star_on.gif";
+        </script>
+
+        <h2>Kohta 2, firstchild & lastchild</h2>
+
+        <span id="phrase">
+            Tuiki Tuiki
+            <u>
+                <img src = "../kuvat/star_off.gif">
+                tähtönen
+            </u>
+        </span>
+
+        <script>
+        document.getElementById("phrase").lastElementChild.lastElementChild.src = "../kuvat/star_on.gif";
+        </script>
+
+        <h2>Kohta 3, previous_sibling & next_sibling</h2>
+
+        <span>
+            <img src="../kuvat/star_off.gif">
+            <img src="../kuvat/star_off.gif">
+            <img id="laststar" src="../kuvat/star_off.gif">
+        </span>
+        <script>
+        document.getElementById("laststar").previousSibling.src="../kuvat/star_on.gif";
+        </script>
+
+        <h2>Kohta 4, parent_node</h2>
+
+        <span>
+            <b>
+                <small id="start_here">
+                    Twinkle
+                </small>
+            </b>
+            <i>
+                twinkle little
+                <img src="../kuvat/star_off.gif">
+            </i>
+        </span>
+
+        <script>
+        document.getElementById("start_here").parentNode.nextSibling.lastChild.src="../kuvat/star_on.gif";
+        </script>
+
+        <h2>Kohta 5, removechild</h2>
+        <p>Poista tähti</p>
+        <span>
+            Ammu alas
+            <img id="fallenstar" src="../kuvat/star_on.gif">
+        </span>
+
+        <script>
+        var star = document.getElementById("fallenstar");
+        star.parentNode.removeChild(star);
+        </script>
+
+        <h2>Kohta 6, appendchild</h2>
+        <span>
+            <span id="source">
+                Tässä on tähti
+            <img src="../kuvat/star_on.gif">
+            </span>
+            <span id="target">
+                Siirrä se tänne
+            </span>
+        </span>
+
+        <script>
+        document.getElementById("target").appendChild(document.getElementById("source")).lastChild;
+        </script>
+        <h2>Kohta 7, createtextnode</h2>
+
+        <span id="math">
+            6 * 7 =
+        </span>
+
+        <script>
+        document.getElementById("math").appendChild(document.createTextNode("42"))
+        </script>
+
+        <h2>Kohta 8, document,createElement</h2>
+
+        <span id="sky">
+        </span>
+
+            <script>
+            var img = document.createElement("img");
+            img.src = "../kuvat/star_on.gif";
+            document.getElementById("sky").appendChild(img);
+            </script>
+
+
+
+
+    </body>
+</html>

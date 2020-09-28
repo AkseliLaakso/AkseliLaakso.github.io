@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<script>
+function voluumi_laskin()
+{
+    var volume;
+    var radius = document.getElementById("radius").value;
+    radius = Math.abs(radius);
+    volume = (4/3) *Math.PI *Math.pow(radius, 3);
+    volume = volume.toFixed(4);
+    document.getElementById("volume").value = volume;
+    return false;
+}
+</script>
+<title>dom demo3</title>
+</head>
+<body>
+
+<p>Anna pallon säde, saat tilavuuden.
+
+<form action="" method="post" id="MyForm">
+<label for="radius">Säde</label>
+<input type="text" name="radius" id="radius" required>
+<label for="volume">Tilavuus</label>
+<input type="text" name="volume" id="volume">
+<input type="submit" value="Calculate" id="submit">    
+</form>
+
+<script>
+window.onload = document.getElementById("MyForm").onsubmit = voluumi_laskin;
+</script>
+
+</body>
+</html>
