@@ -13,6 +13,34 @@ function voluumi_laskin()
     document.getElementById("volume").value = volume;
     return false;
 }
+function pienifunktio()
+{
+    var teksti = document.getElementById("nimi").value;
+    alert(teksti);
+}
+
+
+function myFunction() {
+var x = document.createElement("FROM"); //luodaan lomake
+x.setAttribute("id", "myForm"); // annetaan lomakkeelle  id
+document.body.appendChild(x); //lisätään lomake dokumentin lapseksi
+
+var y = document.createElement("INPUT"); //luodaan uusi input
+y.setAttribute("type", "text"); //annetaan inputille tyyppi
+y.setAttribute("value", "Donald"); //annetaan inputille arvo
+y.setAttribute("id", "nimi");
+document.getElementById("myForm").appendChild(y); //lisätään input lomakkeen lapseksi
+
+var z = document.createElement("INPUT");
+z.setAttribute("type", "button");
+z.setAttribute("value", "Lähetä");
+z.setAttribute("oneclick", "pienifunktio()");
+document.getElementById("myForm").appendChild(z);
+}
+
+
+
+
 </script>
 <title>dom demo3</title>
 </head>
