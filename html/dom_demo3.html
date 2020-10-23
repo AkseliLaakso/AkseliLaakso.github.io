@@ -19,18 +19,15 @@ function pienifunktio()
     alert(teksti);
 }
 
-
 function myFunction() {
 var x = document.createElement("FROM"); //luodaan lomake
 x.setAttribute("id", "myForm"); // annetaan lomakkeelle  id
 document.body.appendChild(x); //lisätään lomake dokumentin lapseksi
-
 var y = document.createElement("INPUT"); //luodaan uusi input
 y.setAttribute("type", "text"); //annetaan inputille tyyppi
 y.setAttribute("value", "Donald"); //annetaan inputille arvo
 y.setAttribute("id", "nimi");
 document.getElementById("myForm").appendChild(y); //lisätään input lomakkeen lapseksi
-
 var z = document.createElement("INPUT");
 z.setAttribute("type", "button");
 z.setAttribute("value", "Lähetä");
@@ -38,27 +35,131 @@ z.setAttribute("oneclick", "pienifunktio()");
 document.getElementById("myForm").appendChild(z);
 }
 
+function checkit()
+{
+    var textstring =""; //kerää kaikki tieto tähän muuttujaan, sijoitetaan lopuksi textareaan
 
+    // Ensiksi katsotaan, että kaikissa kentissä (4 ensimmäistä) on arvo (* = pakko)
+
+    for(let i=0; i < 4; i++) {
+        var box = document.forms["example"].elements[i]; // muuttuja väliaikainen, siihen pannaan aina kierroksen tekstikenttä (siis 4 ensimmäistä)
+        if(!box.value) {
+            alert("et ole täyttänyt kohtaa"+ box.name + "!");
+            box.focus(); //siirtää kursorin puuttuvan kohdalle.
+            return;
+        }
+        textstring += box.name + ": " + box.value + "\n"; //+= lisää vanhan tekstin perään uuden
+    }
+    // haetaan arvot radionapeista "why"
+    let user_input = "";
+
+    for(i = 0; i < document.forms["example"].why.length;  i++) {
+        if( document.forms["example"].why[i].checked) {
+            user_input = document.forms['example'].why[i].value;
+        }
+    }
+    textstring += 'Miksi-kenttä:' + user_input + '\n';
+
+    //haetaan arvo valintaaluetelosta (select + option)
+    user_input = document.example.refer.options[document.example.refer.selectedIndex].value;
+    // example on lomake, refer on select-elemntti, options referin vaihtoehdot, selected on se vaihtoehto, joka on valittu, value sen arvo
+
+    textstring += 'kuinka-kenttä' + user_input + '\n';
+
+    //katsotaan checkboxin sisältö
+    textstring += 'lisätietoja: ';
+    for(i = 9; i < 13; i++) {
+        if(document.example.elements[i].checked) {
+            textstring += document.example.elements[i].name + ' ';
+        }
+    }
+
+    document.forms['example'].output.value = textstring; //lisätään textareaan kerätty tekstimuuttuja
+}
 
 
 </script>
-<title>dom demo3</title>
+<title>dom demo3 (Kohta A)</title>
 </head>
 <body>
-
 <p>Anna pallon säde, saat tilavuuden.
+    <form action="" method="post" id="MyForm">
+    <label for="radius">Säde</label>
+    <input type="text" name="radius" id="radius" required>
+    <label for="volume">Tilavuus</label>
+    <input type="text" name="volume" id="volume">
+    <input type="submit" value="Calculate" id="submit">    
+    </form>
 
-<form action="" method="post" id="MyForm">
-<label for="radius">Säde</label>
-<input type="text" name="radius" id="radius" required>
-<label for="volume">Tilavuus</label>
-<input type="text" name="volume" id="volume">
-<input type="submit" value="Calculate" id="submit">    
-</form>
 
-<script>
-window.onload = document.getElementById("MyForm").onsubmit = voluumi_laskin;
-</script>
+<title>DOMdemo (Kohta C)</title>
+  <script>
+  function myFunction() {
+    var x = document.createElement("FORM"); //luodaan lomake
+    x.setAttribute("id", "myForm"); //annetaan lomakkeelle id
+    document.body.appendChild(x); //lisätään lomake dokumentin lapseksi
+    var y = document.createElement("INPUT");  //luodaan uusi input
+    y.setAttribute("type", "text"); // annetaan inputille tyyppi
+    y.setAttribute("value", "Donald"); //annetaan inputille arvo
+    document.getElementById("myForm").appendChild(y); //lisätään input lomakkeen lapseksi
+  }
+  </script>
+</head>
+<body onload="myFunction()">
+
+    <h2>Lomakkeen validointi</h2>
+    <form name="example" action="#" onsubmit="checkit(); return false">
+
+
+        * Nimi<br>
+        <input type="text" name="name" required><br> <!-- name="name" required> -->
+        
+        * Osoite<br>
+        <input type="text" name="address"><br>
+        
+        
+        * Postitoimipaikka<br>
+        <input type="text" name="City"><br>
+        
+        
+       *  E-mail<br>
+        <input type="email" name="E-mail"><br>
+        
+        
+        Miksi haluat opiskella JavaScriptiä?<br>
+        <input type="radio" name="why" value="Dunno">Emmäätiiä<br>
+        <input type="radio" name="why" value="Boss">Pomo käski<br>
+        <input type="radio" name="why" value="Interest">Asia kiinnostaa<br>
+        <input type="radio" name="why" value="Useful">Voi osoittautua hyödylliseksi<br>
+        
+        
+        Kuinka päädyit tälle sivulle?<br>
+        <select name="refer">
+            <option value='' selected="selected">--- Valitse ---</option>
+            <option value="random">Löysin sattumalta</option>
+            <option value="wdf">WDF:n kautta</option>
+            <option value="NetlinQ">NetlinQ:n kautta</option>
+            <option value="searchengine">Hakukoneella</option>
+        </select>
+        <br>
+        
+        
+        Haluan lisätietoja<br>
+        <input type="checkbox" name="oranges">appelsiineista<br>
+        <input type="checkbox" name="potatoes">perunoista<br>
+        <input type="checkbox" name="tomatoes">tomaateista<br>
+        <input type="checkbox" name="blue whales">valaista<br>
+
+        <input type="submit" value="Suorita"><br>
+        <input type="reset" value="tyhjennä"/><br>
+        
+        
+        <textarea cols="30" rows="7" name="output">Kun klikkaat 'Suorita' käyttäjän syöte tulee tähän kenttään</textarea><br>
+        </form>
+
+    <script>
+    window.onload = document.getElementById("MyForm").onsubmit = voluumi_laskin;
+    </script>
 
 </body>
 </html>
