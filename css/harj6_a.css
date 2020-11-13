@@ -55,7 +55,7 @@ footer {
     }
 
     .right-sidebar {
-        order: 3;
+        order: 1;
         flex: 1;
     }
 

@@ -1,0 +1,30 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale=1.0>
+        <title>JSONdemo2</title>
+    </head>
+    <body>
+        <div id="lista"></div>
+        <script>
+            var teksti = '[{"nimi":"Sinuhe","Vuosi":"1945"},{"nimi":"Mikael Karvajalka","Vuosi":"1984"},{"nimi":"Mikael Hakim","Vuosi":"1949"}]'; // VALIDOI jsonlint.com
+
+            //muuta JavaScriptiksi
+            var obj = JSON.parse(teksti);
+
+            //console.log(teksti);
+
+            function luoLuottelo(obj) {
+                var out = "<ul>";
+                for(let x in obj) {
+                    out += '<li>Nimi: ' + obj[x]["nimi"] + ', Vuosi: ' + obj[x]["Vuosi"] + '</li>';
+                }
+                out += "</ul>";
+                document.getElementById("lista").innerHTML=out;
+            }
+
+            luoLuottelo(obj);
+
+        </script>
+    </body>
+</html>
