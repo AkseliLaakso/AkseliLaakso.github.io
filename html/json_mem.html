@@ -1,0 +1,86 @@
+JSON paikallisena tietovarastona
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Tallenna ja hae dataa paikallisesti</h2>
+
+<p id="demo"></p>
+
+<script>
+var myObj, myJSON, text, obj;
+
+//Tallenna data:
+myObj = { "nimi":"Eemeli", "age":17, "koti":"Tampere" };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+//Hae data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.nimi;
+</script>
+
+</body>
+</html>
+
+
+Muunna JSON JavaScriptiksi
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Muunna JSON -muotoinen teksti JavaScript-olioksi</h2>
+
+<p id="demo"></p>
+
+<script>
+
+var myJSON = '{ "nimi":"Juuso", "age":21, "koti":"Kangasala" }';
+var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.nimi;
+
+</script>
+
+</body>
+</html>
+
+
+Datan lähetys palvelimelle
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Muunna JavaScript olio JSON tekstiksi ja lähetä palvelimelle.</h2>
+
+<script>
+
+var myObj = { "nimi":"Leevi", "ika":100, "koti":"Tampere" };
+var myJSON = JSON.stringify(myObj);
+window.location = "jsondemo.php?x=" + myJSON;
+
+</script>
+
+</body>
+</html>
+
+
+Palvelinpään lähetyksen käsittelijä
+<!doctype html>
+<html>
+<head>
+<title>JSON kokeilu</title>
+</head>
+<body>
+
+<?php
+if(isset($_GET["x"])){
+    $myArr=$_GET["x"];    
+    $myJSON = json_encode($myArr);
+    echo $myJSON;
+}
+?>
+
+</body>
+</html>
+leena.jarvenkyla-niemi at tampere.fi
