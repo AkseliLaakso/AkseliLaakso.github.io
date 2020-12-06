@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            DOM harjoitus 2
+        </title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="../../johdatus-ohjelmointiin-AkseliLaakso/js/dom_harj2.js"></script>
+    </head>
+    <body>
+
+        <h2>Kohta A</h2>
+        <form action="">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname"><br><br>
+            <button onclick="Submit()">Submit</button>
+          </form>
+
+          <h2>Kohta B</h2>
+        <form id="BForm">
+            <label>Vuokra</label>
+            <input id="BVuokra" type="text" value="0"><br>
+            <label>Ruoka</label>
+            <input id="BRuoka" type="text" value="0"><br>
+            <label>Matkat</label>
+            <input id="BMatkat" type="text" value="0"><br>
+            <label>Viihde</label>
+            <input id="BViihde" type="text" value="0"><br>
+            <label>Vaatteet</label>
+            <input id="BVaatteet" type="text" value="0"><br>
+            <label>Netti/Puhelin</label>
+            <input id="BNetti" type="text" value="0"><br>
+            <label>Muu</label>
+            <input id="BMuu" type="text" value="0"><br>
+            <button onclick="KohtaB()">Budget</button>
+        </form>
+
+        <h2>Kohta C</h2>
+        <form>
+            <label>Määrä</label>
+            <input id="CMäärä" type="text">
+            <input type="button" onclick="KohtaC()" value="Luo Taulukko">
+        </form>
+        <div id="CKohta"></div>
+
+        <h2>Kohta D</h2>
+        <form>
+            <label>Esimerkki: (Luku 1 / Luku 2)</label><br>
+            <label>Luku 1</label>
+            <input id="DLuku1" type="text" value = "0"><br>
+            <label>Luku 2</label>
+            <input id = "DLuku2" type="text" value = "0"><br>
+            <input type="button" value = "Jaa" onclick="DJaa()">
+            <input type="button" value = "Kerro" onclick="DKerro()">
+            <br><br>
+            <label>Vastaus</label>
+            <input id="DVastaus" type="text" value = "0"><br>
+        </form>
+
+        <h2>Kohta E ja F</h2>
+        <p>Anna joko jompi kumpi luvuista</p>
+        <form id="EForm">
+            <label>Hinta</label>
+            <input id="EHinta" type="text"><br>
+            <label>Arvonlisävero %</label>
+            <input id="EVero%" type="text"><br>
+            <br>
+            <label>Koko hinta</label>
+            <input id="EKokoHinta" type="text"><br>
+            <label>Vero</label>
+            <input id="EVero" type="text"><br>
+            <input type="button" onclick="KohtaE()" value="Laske">
+        </form>
+        <textarea id="ETextArea" disabled rows="4"></textarea>
+        
+    </body>
+</html>

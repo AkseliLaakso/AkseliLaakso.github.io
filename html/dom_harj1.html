@@ -16,13 +16,21 @@
         <button type="button" onclick="myFunction_b()">button</button>
         <p id="p"></p>
 
-        <style>
-            
-
-        </style>
         <h2>Kohta C</h2>
-        <h3>Suurin</h3>
-        <h3>Pienin</h3>
+        <p id="suurin">Suurin</p>
+        <p id="pienin">Pienin</p>
+        <button type="button" onclick="Kolmelukua_kysely()">button</button>
+
+        <h2>Kohta D</h2>
+        <p id="text1">Kun hyppäät ilosta, varo, ettei kukaan vedä maata jalkojesi alta.</p>
+        <button onclick='Vaihda_teksti()'>Vaihda teksti</button><br>
+
+        <h2>Kohta E</h2>
+        <div id="vaihda_kuvat">
+            <img src="../kuvat/Surullinen.jpg" width="200" height="200">
+            <img src="../kuvat/Iloinen.jpg" width="200" height="200">
+        </div>
+        <button id="vaihda" onclick='vaihda()'>Vaihda</button>
 
     </body>
 </html>

@@ -1,0 +1,24 @@
+#teht1 img, #teht2 img, #teht3, #teht4{
+    border: 2px solid black;
+}
+
+#teht3 {
+    background-color: pink;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+}
+
+#hiddentext {
+    display: none;
+}
+
+#teht3:hover #hiddentext {
+    display: block;
+}
+
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
